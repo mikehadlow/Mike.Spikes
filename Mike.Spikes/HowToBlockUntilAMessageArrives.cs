@@ -27,6 +27,7 @@ namespace Mike.Spikes
             // should expect to see "Got text: 'The message full of data'"
             myService.Process();
 
+            myService.Dispose();
             bus.Dispose();
         }
 
@@ -48,6 +49,7 @@ namespace Mike.Spikes
             // should expect to see "Timeout occured"
             myService.Process();
 
+            myService.Dispose();
             bus.Dispose();
         }
     }
