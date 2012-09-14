@@ -1,0 +1,21 @@
+﻿{
+  "FirstName": "Leo",
+  "LastName": "Hadlow",
+  "Age": 10,
+  "Address": {
+    "StreetAddress": "4 Chelston Avenue",
+    "City": "Brighton & Hove",
+    "State": "East Sussex",
+    "PostalCode": "BN3 5SR"
+  },
+  "PhoneNumbers": [
+    {
+      "Type": 0,
+      "Number": "01273 421444"
+    },
+    {
+      "Type": 2,
+      "Number": "07866 456123"
+    }
+  ]
+}
