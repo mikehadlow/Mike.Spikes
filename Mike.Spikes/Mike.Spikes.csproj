@@ -31,30 +31,59 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EasyNetQ, Version=0.6.3.17, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ, Version=0.6.3.23, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EasyNetQ.0.6.3.17\lib\net40\EasyNetQ.dll</HintPath>
+      <HintPath>..\packages\EasyNetQ.0.6.3.23\lib\net40\EasyNetQ.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.9\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RabbitMQ.Client, Version=2.8.1.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=2.8.6.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RabbitMQ.Client.2.8.1\lib\net30\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\packages\RabbitMQ.Client.2.8.6\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HowToBlockUntilAMessageArrives.cs" />
-    <Compile Include="PalindromeQuestion.cs" />
+    <Compile Include="AsyncMessaging\HowToBlockUntilAMessageArrives.cs" />
+    <Compile Include="FluentApi\FluentApiSpike.cs" />
+    <Compile Include="HttpHandler\MyHttpHandler.cs" />
+    <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShowJsonSerialization.cs" />
-    <Compile Include="ShowXmlSerialization.cs" />
+    <Compile Include="SerializationDemo\ShowJsonSerialization.cs" />
+    <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
     <Compile Include="UsefulFunctions.cs" />
+    <Compile Include="Visitor\VisitorSpike.cs" />
+    <Compile Include="Windsor101\Account.cs" />
+    <Compile Include="Windsor101\AccountRepository.cs" />
+    <Compile Include="Windsor101\Bus.cs" />
+    <Compile Include="Windsor101\IAccountRepository.cs" />
+    <Compile Include="Windsor101\IBus.cs" />
+    <Compile Include="Windsor101\IPaymentServiceConfiguration.cs" />
+    <Compile Include="Windsor101\Installer.cs" />
+    <Compile Include="Windsor101\IPaymentService.cs" />
+    <Compile Include="Windsor101\PayCustomer.cs" />
+    <Compile Include="Windsor101\PaymentService.cs" />
+    <Compile Include="Windsor101\PaymentServiceConfiguration.cs" />
+    <Compile Include="Windsor101\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -67,6 +96,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
