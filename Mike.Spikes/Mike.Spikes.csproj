@@ -63,6 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncMessaging\HowToBlockUntilAMessageArrives.cs" />
+    <Compile Include="CurryContainer\Functional.cs" />
+    <Compile Include="CurryContainer\IRegistration.cs" />
+    <Compile Include="CurryContainer\Spike.cs" />
     <Compile Include="FluentApi\FluentApiSpike.cs" />
     <Compile Include="HttpHandler\MyHttpHandler.cs" />
     <Compile Include="Monad\IdentityMonad.cs" />

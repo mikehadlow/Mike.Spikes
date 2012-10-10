@@ -46,6 +46,19 @@ namespace Mike.Spikes.Monad
             Console.Out.WriteLine("result.State = {0}", result.State);
         }
 
+        public void Spike3()
+        {
+            var machine =
+                from a in GetInitial()
+                let b = a + 6
+                select string.Format("{0} {1}", a, b);
+
+            var result = machine("start. ");
+
+            Console.Out.WriteLine("result.Value = {0}", result.Value);
+            Console.Out.WriteLine("result.State = {0}", result.State);
+        }
+
         public State<int, string> GetInitial()
         {
             return state => new Result<string, int>(state + " Got Initial 5.", 5);
@@ -105,6 +118,15 @@ namespace Mike.Spikes.Monad
                 return func(aResult.Value)(aResult.State);
             };
         }
+
+        public static State<B, S> Select<A, B, S>(this State<A, S> source, Func<A, B> selector)
+        {
+            return state =>
+            {
+                var aResult = source(state);
+                return new Result<S, B>(aResult.State, selector(aResult.Value));
+            };
+        } 
 
         public static State<C, S> SelectMany<A, B, C, S>(this State<A, S> a, Func<A, State<B, S>> func, Func<A, B, C> select)
         {
