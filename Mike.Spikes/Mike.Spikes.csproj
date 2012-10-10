@@ -65,6 +65,9 @@
     <Compile Include="AsyncMessaging\HowToBlockUntilAMessageArrives.cs" />
     <Compile Include="FluentApi\FluentApiSpike.cs" />
     <Compile Include="HttpHandler\MyHttpHandler.cs" />
+    <Compile Include="Monad\IdentityMonad.cs" />
+    <Compile Include="Monad\ParserMonad.cs" />
+    <Compile Include="Monad\StateMonad.cs" />
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
