@@ -11,7 +11,7 @@ namespace Mike.Spikes.Windsor101
             var configuration = new PaymentServiceConfiguration();
             var bus = new Bus(configuration);
             var accountRepository = new AccountRepository(configuration);
-            var paymentService = new PaymentService(accountRepository, bus);
+            var paymentService = new PaymentService(accountRepository, bus, () => DateTime.Now);
 
             paymentService.Start();
 
@@ -41,7 +41,7 @@ namespace Mike.Spikes.Windsor101
             container.Dispose();
         }
 
-        public void PretendToPublish()
+        public static void PretendToPublish()
         {
             new Bus(new PaymentServiceConfiguration()).Publish(new PayCustomer { Amount = 20M, CustomerId = 101 });
         }

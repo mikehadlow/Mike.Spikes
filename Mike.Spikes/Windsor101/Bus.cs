@@ -20,6 +20,7 @@ namespace Mike.Spikes.Windsor101
 
         public void Publish<T>(T message)
         {
+            Console.WriteLine("Published: '{0}'", message);
             ((Action<T>) handlers[typeof (T)])(message);
         }
 

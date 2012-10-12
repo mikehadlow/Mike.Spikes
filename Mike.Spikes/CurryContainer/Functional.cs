@@ -18,14 +18,9 @@ namespace Mike.Spikes.CurryContainer
         {
             return a => b => c => input(a, b, c);
         }
-
-        public static Func<A, Func<B, Func<C, Func<D,R>>>> Curry<A, B, C, D, R>(Func<A, B, C, D, R> input)
-        {
-            return a => b => c => d => input(a, b, c, d);
-        }
     }
 
-    public static class RegistrationExtension
+    public static class RegistrationExtensions
     {
         public static IRegistration Register<A,R>(this IRegistration registration, Func<A, R> source)
         {

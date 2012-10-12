@@ -80,9 +80,13 @@
     <Compile Include="Visitor\VisitorSpike.cs" />
     <Compile Include="Windsor101\Account.cs" />
     <Compile Include="Windsor101\AccountRepository.cs" />
+    <Compile Include="Windsor101\CollectionDemo.cs" />
     <Compile Include="Windsor101\Bus.cs" />
+    <Compile Include="Windsor101\DecoratorDemo.cs" />
+    <Compile Include="Windsor101\GenericsDemo.cs" />
     <Compile Include="Windsor101\IAccountRepository.cs" />
     <Compile Include="Windsor101\IBus.cs" />
+    <Compile Include="Windsor101\DemoConfiguration.cs" />
     <Compile Include="Windsor101\IPaymentServiceConfiguration.cs" />
     <Compile Include="Windsor101\Installer.cs" />
     <Compile Include="Windsor101\IPaymentService.cs" />
@@ -90,11 +94,17 @@
     <Compile Include="Windsor101\PaymentService.cs" />
     <Compile Include="Windsor101\PaymentServiceConfiguration.cs" />
     <Compile Include="Windsor101\Program.cs" />
+    <Compile Include="Windsor101\TipsAndTricks.cs" />
+    <Compile Include="Windsor101\TypedFactoryDemo.cs" />
+    <Compile Include="Windsor101\UsingFactoryMethodDemo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Person.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Windsor101\Windsor.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
