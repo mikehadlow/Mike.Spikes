@@ -77,11 +77,13 @@
     <Compile Include="Monad\IdentityMonad.cs" />
     <Compile Include="Monad\ParserMonad.cs" />
     <Compile Include="Monad\StateMonad.cs" />
+    <Compile Include="Puzzlers\Interview.cs" />
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SerializationDemo\ShowJsonSerialization.cs" />
     <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
+    <Compile Include="SerialPorts\SerialPortsSpike.cs" />
     <Compile Include="UsefulFunctions.cs" />
     <Compile Include="Visitor\VisitorSpike.cs" />
     <Compile Include="Windsor101\Account.cs" />
