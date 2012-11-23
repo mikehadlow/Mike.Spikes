@@ -77,7 +77,8 @@
     <Compile Include="Monad\IdentityMonad.cs" />
     <Compile Include="Monad\ParserMonad.cs" />
     <Compile Include="Monad\StateMonad.cs" />
-    <Compile Include="Puzzlers\Interview.cs" />
+    <Compile Include="ProducerConsumer\ProducerConsumerSpike.cs" />
+    <Compile Include="Puzzlers\FizzBuzz.cs" />
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
