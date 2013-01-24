@@ -196,7 +196,7 @@ namespace Mike.Spikes.RefactoringExample
                         {
                             errors += Environment.NewLine;
                         }
-                        errors += "invalid endDate";
+                        errors += e.ToString();
                     }
                 }
                 else
@@ -212,7 +212,7 @@ namespace Mike.Spikes.RefactoringExample
                         {
                             errors += Environment.NewLine;
                         }
-                        errors += "invalid endDate";
+                        errors += e.ToString();
                     }
                 }
             }
@@ -229,7 +229,7 @@ namespace Mike.Spikes.RefactoringExample
                     {
                         errors += Environment.NewLine;
                     }
-                    errors += "invalid endDate";
+                    errors += e.ToString();
                 }
             }
 
