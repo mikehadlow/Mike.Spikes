@@ -199,6 +199,22 @@ namespace Mike.Spikes.RefactoringExample
                         errors += "invalid endDate";
                     }
                 }
+                else
+                {
+                    try
+                    {
+                        da.UpdateTemporaryStore(customer, c.ToString());
+                    }
+                    catch (Exception e)
+                    {
+                        result = false;
+                        if (errors != "")
+                        {
+                            errors += Environment.NewLine;
+                        }
+                        errors += "invalid endDate";
+                    }
+                }
             }
             else
             {
