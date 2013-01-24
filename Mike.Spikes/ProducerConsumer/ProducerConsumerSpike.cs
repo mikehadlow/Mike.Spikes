@@ -35,7 +35,7 @@ namespace Mike.Spikes.ProducerConsumer
                 {
                     ventilatorQueue.Add(new WorkItem { Text = string.Format("Item {0}", i) });
                 }
-            });
+            }, TaskCreationOptions.LongRunning);
         }
 
         public static void StartWorker(int workerNumber,
@@ -51,7 +51,7 @@ namespace Mike.Spikes.ProducerConsumer
                     workItem.Text = workItem.Text + " processed by worker " + workerNumber;
                     sinkQueue.Add(workItem);
                 }
-            });
+            }, TaskCreationOptions.LongRunning);
         }
 
         public static void StartSink(BlockingCollection<WorkItem> sinkQueue)
@@ -62,7 +62,7 @@ namespace Mike.Spikes.ProducerConsumer
                 {
                     Console.WriteLine("Processed Messsage: {0}", workItem.Text);
                 }
-            });
+            }, TaskCreationOptions.LongRunning);
         }
     }
 

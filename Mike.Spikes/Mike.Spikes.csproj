@@ -60,6 +60,12 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.XML" />
@@ -72,6 +78,7 @@
     <Compile Include="CurryContainer\Spike.cs" />
     <Compile Include="Dynamic\ExpandoObjectSpike.cs" />
     <Compile Include="FluentApi\FluentApiSpike.cs" />
+    <Compile Include="HttpClientPlay\HttpClientSpike.cs" />
     <Compile Include="HttpHandler\MyHttpHandler.cs" />
     <Compile Include="MessageHandler\Spike.cs" />
     <Compile Include="Monad\IdentityMonad.cs" />
@@ -82,9 +89,14 @@
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefactoringExample\BadCode.cs" />
+    <Compile Include="RefactoringExample\BadCodeRunner.cs" />
+    <Compile Include="RefactoringExample\DataAccess.cs" />
+    <Compile Include="RefactoringExample\WidgetColor.cs" />
     <Compile Include="SerializationDemo\ShowJsonSerialization.cs" />
     <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
     <Compile Include="SerialPorts\SerialPortsSpike.cs" />
+    <Compile Include="UnixTime\UnixTimeSpike.cs" />
     <Compile Include="UsefulFunctions.cs" />
     <Compile Include="Visitor\VisitorSpike.cs" />
     <Compile Include="Windsor101\Account.cs" />
