@@ -181,7 +181,7 @@ namespace Mike.Spikes.RefactoringExample
                 t = false;
             }
 
-            if (!t)
+            if (t)
             {
                 if (d >= DateTime.Now)
                 {
