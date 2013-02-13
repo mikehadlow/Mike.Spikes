@@ -1,88 +1,35 @@
 ﻿using System;
 using System.IO;
-using System.Runtime.Serialization;
 using System.Xml;
 
 namespace Mike.Spikes.RefactoringExample
 {
-    public class Widget
+    public class BadCodeCopy
     {
-        public bool Temporary { get; private set; }
-        public WidgetColor WidgetColor { get; private set; }
-        public DateTime EndDate { get; private set; }
-        public string Customer { get; private set; }
-
-        public Widget(bool temporary, WidgetColor widgetColor, DateTime endDate, string customer)
+        public bool Process(string properties, string customer, out string errors)
         {
-            Temporary = temporary;
-            WidgetColor = widgetColor;
-            EndDate = endDate;
-            Customer = customer;
-        }
-    }
-
-    public class BadCode
-    {
-        public class ProcessParams
-        {
-            private readonly string properties;
-            private readonly string customer;
-
-            public ProcessParams(string properties, string customer)
-            {
-                this.properties = properties;
-                this.customer = customer;
-            }
-
-            public string Properties
-            {
-                get { return properties; }
-            }
-
-            public string Customer
-            {
-                get { return customer; }
-            }
-        }
-
-        public bool Process(ProcessParams processParams, out string returnedErrors)
-        {
-            if(processParams.Properties == null)
-            {
-                throw new ArgumentNullException("properties");
-            }
-            if(processParams.Customer == null)
-            {
-                throw new ArgumentNullException("customer");
-            }
-
             var result = true;
-            var errors = "";
+            errors = "";
 
-            Action<string> fail = message =>
+            var p = properties.Split('|');
+            bool t = false;
+            WidgetColor c = WidgetColor.SomeShadeOfGrey;
+            DateTime d = new DateTime();
+            DataAccess da = new DataAccess();
+
+            if (!properties.StartsWith("<record>"))
             {
-                result = false;
-                if (errors != "")
+                for (int i = 0; i < p.Length; i++)
                 {
-                    errors += Environment.NewLine;
-                }
-                errors += message;
-            };
-
-            var splitProperties = processParams.Properties.Split('|');
-            bool temporary = false;
-            var widgetColor = WidgetColor.SomeShadeOfGrey;
-            var endDate = new DateTime();
-            var dataAccess = new DataAccess();
-
-            if (!processParams.Properties.StartsWith("<record>"))
-            {
-                for (int i = 0; i < splitProperties.Length; i++)
-                {
-                    var kv = splitProperties[i].Split('=');
+                    var kv = p[i].Split('=');
                     if (kv.Length != 2)
                     {
-                        throw new BadCodeException("invalid value found in properties");
+                        result = false;
+                        if (errors != "")
+                        {
+                            errors += Environment.NewLine;
+                        }
+                        errors += "invalid value found in properties";
                         continue;
                     }
                     var key = kv[0];
@@ -91,25 +38,30 @@ namespace Mike.Spikes.RefactoringExample
                     switch (key)
                     {
                         case "temporary":
-                            if (!bool.TryParse(value, out temporary))
+                            if (!bool.TryParse(value, out t))
                             {
-                                fail("invalid temporary value");
+                                result = false;
+                                if (errors != "")
+                                {
+                                    errors += Environment.NewLine;
+                                }
+                                errors += "invalid temporary value";
                             }
                             break;
                         case "color":
                             switch (value)
                             {
                                 case "blue":
-                                    widgetColor = WidgetColor.Blue;
+                                    c = WidgetColor.Blue;
                                     break;
                                 case "red":
-                                    widgetColor = WidgetColor.Red;
+                                    c = WidgetColor.Red;
                                     break;
                                 case "green":
-                                    widgetColor = WidgetColor.Green;
+                                    c = WidgetColor.Green;
                                     break;
                                 case "someshadeofgrey":
-                                    widgetColor = WidgetColor.SomeShadeOfGrey;
+                                    c = WidgetColor.SomeShadeOfGrey;
                                     break;
                                 default:
                                     result = false;
@@ -122,7 +74,7 @@ namespace Mike.Spikes.RefactoringExample
                             }
                             break;
                         case "endDate":
-                            if (!DateTime.TryParse(value, out endDate))
+                            if (!DateTime.TryParse(value, out d))
                             {
                                 result = false;
                                 if (errors != "")
@@ -149,7 +101,7 @@ namespace Mike.Spikes.RefactoringExample
 
                 try
                 {
-                    document.Load(new StringReader(processParams.Properties));
+                    document.Load(new StringReader(properties));
                 }
                 catch (Exception e)
                 {
@@ -166,7 +118,7 @@ namespace Mike.Spikes.RefactoringExample
                     switch (node.Name)
                     {
                         case "temporary":
-                            if (!bool.TryParse(node.Value, out temporary))
+                            if (!bool.TryParse(node.Value, out t))
                             {
                                 result = false;
                                 if (errors != "")
@@ -180,16 +132,16 @@ namespace Mike.Spikes.RefactoringExample
                             switch (node.Value)
                             {
                                 case "blue":
-                                    widgetColor = WidgetColor.Blue;
+                                    c = WidgetColor.Blue;
                                     break;
                                 case "red":
-                                    widgetColor = WidgetColor.Red;
+                                    c = WidgetColor.Red;
                                     break;
                                 case "green":
-                                    widgetColor = WidgetColor.Green;
+                                    c = WidgetColor.Green;
                                     break;
                                 case "someshadeofgrey":
-                                    widgetColor = WidgetColor.SomeShadeOfGrey;
+                                    c = WidgetColor.SomeShadeOfGrey;
                                     break;
                                 default:
                                     result = false;
@@ -202,7 +154,7 @@ namespace Mike.Spikes.RefactoringExample
                             }
                             break;
                         case "endDate":
-                            if (!DateTime.TryParse(node.Value, out endDate))
+                            if (!DateTime.TryParse(node.Value, out d))
                             {
                                 result = false;
                                 if (errors != "")
@@ -224,19 +176,19 @@ namespace Mike.Spikes.RefactoringExample
                 }
             }
 
-            if (widgetColor == WidgetColor.Blue && processParams.Customer == "AB")
+            if (c == WidgetColor.Blue && customer == "AB")
             {
-                temporary = false;
+                t = false;
             }
 
-            if (temporary)
+            if (t)
             {
-                if (endDate >= DateTime.Now)
+                if (d >= DateTime.Now)
                 {
                     try
                     {
                         var message = "";
-                        var dbOk = dataAccess.Update(processParams.Customer, widgetColor.ToString(), endDate, out message);
+                        var dbOk = da.Update(customer, c.ToString(), d, out message);
                         if (!dbOk)
                         {
                             result = false;
@@ -262,7 +214,7 @@ namespace Mike.Spikes.RefactoringExample
                     try
                     {
                         var message = "";
-                        var dbOk = dataAccess.UpdateTemporaryStore(processParams.Customer, widgetColor.ToString(), out message);
+                        var dbOk = da.UpdateTemporaryStore(customer, c.ToString(), out message);
                         if (!dbOk)
                         {
                             result = false;
@@ -289,7 +241,7 @@ namespace Mike.Spikes.RefactoringExample
                 try
                 {
                     var message = "";
-                    var dbOk = dataAccess.Update(processParams.Customer, widgetColor.ToString(), endDate, out message);
+                    var dbOk = da.Update(customer, c.ToString(), d, out message);
                     if (!dbOk)
                     {
                         result = false;
@@ -311,38 +263,8 @@ namespace Mike.Spikes.RefactoringExample
                 }
             }
 
-            returnedErrors = errors;
             return result;
         }     
 
-    }
-
-    [Serializable]
-    public class BadCodeException : Exception
-    {
-        //
-        // For guidelines regarding the creation of new exception types, see
-        //    http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/cpconerrorraisinghandlingguidelines.asp
-        // and
-        //    http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dncscol/html/csharp07192001.asp
-        //
-
-        public BadCodeException()
-        {
-        }
-
-        public BadCodeException(string message) : base(message)
-        {
-        }
-
-        public BadCodeException(string message, Exception inner) : base(message, inner)
-        {
-        }
-
-        protected BadCodeException(
-            SerializationInfo info,
-            StreamingContext context) : base(info, context)
-        {
-        }
     }
 }

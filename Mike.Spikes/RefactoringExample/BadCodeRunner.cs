@@ -11,7 +11,7 @@ namespace Mike.Spikes.RefactoringExample
             var headers = "temporary=false|color=blue|endDate=2013-01-24";
             string errors;
 
-            var result = badCode.Process(headers, "AB", out errors);
+            var result = badCode.Process(new BadCode.ProcessParams(headers, "AB"), out errors);
 
             Console.Out.WriteLine("errors = {0}", errors);
             Console.Out.WriteLine("result = {0}", result);
@@ -27,7 +27,7 @@ namespace Mike.Spikes.RefactoringExample
 </record>";
             string errors;
 
-            var result = badCode.Process(xml, "AB", out errors);
+            var result = badCode.Process(new BadCode.ProcessParams(xml, "AB"), out errors);
 
             Console.Out.WriteLine("errors = {0}", errors);
             Console.Out.WriteLine("result = {0}", result);
