@@ -88,6 +88,7 @@
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Puzzlers\Vowels.cs" />
     <Compile Include="RefactoringExample\BadCode.cs" />
     <Compile Include="RefactoringExample\BadCodeRunner.cs" />
     <Compile Include="RefactoringExample\BadCodeCopy.cs" />
