@@ -13,7 +13,7 @@ namespace Mike.Spikes.Puzzlers
             var words = File.ReadAllLines(path).Where(word => word.Intersect("aeiou").Count() == 5);
             foreach (var word in words)
             {
-                Console.Out.WriteLine("word = {0}", word);
+                Console.Out.WriteLine(word);
             }
         }
     }
