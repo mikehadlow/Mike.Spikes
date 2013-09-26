@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EasyNetQ.Management.Client</id>
+    <version>0.12.3.117</version>
+    <title>EasyNetQ.Management.Client</title>
+    <authors>Mike Hadlow</authors>
+    <owners>Mike Hadlow</owners>
+    <licenseUrl>https://github.com/mikehadlow/EasyNetQ/blob/master/licence.txt</licenseUrl>
+    <projectUrl>https://github.com/mikehadlow/EasyNetQ/wiki/Management-API-Introduction</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>EasyNetQ.Management.Client is a .NET client for the RabbitMQ RESTful management API</description>
+    <releaseNotes />
+    <copyright>Copyright Mike Hadlow 2012</copyright>
+    <tags>RabbitMQ Messaging AMQP REST API</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="4.5" />
+    </dependencies>
+  </metadata>
+</package>
