@@ -6,7 +6,7 @@ namespace Mike.Spikes.DangersOfThreading
 {
     public class RaceCondition
     {
-        private const int numberOfIterations = 5000;
+        private const int numberOfIterations = 500000;
         private const int numberOfTasks = 10;
 
         // shared state accessed by many threads
@@ -18,8 +18,8 @@ namespace Mike.Spikes.DangersOfThreading
 
             for (int i = 0; i < numberOfTasks; i++)
             {
-                tasks.Add(Task.Factory.StartNew(Work, TaskCreationOptions.LongRunning));
-                //tasks.Add(Task.Factory.StartNew(WorkWithLock, TaskCreationOptions.LongRunning));
+                //tasks.Add(Task.Factory.StartNew(Work, TaskCreationOptions.LongRunning));
+                tasks.Add(Task.Factory.StartNew(WorkWithLock, TaskCreationOptions.LongRunning));
             }
 
             Task.WaitAll(tasks.ToArray());

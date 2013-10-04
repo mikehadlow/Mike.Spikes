@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Mike.Spikes</RootNamespace>
     <AssemblyName>Mike.Spikes</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
@@ -107,7 +110,9 @@
     <Compile Include="ObservablePlay\ObservableSpike.cs" />
     <Compile Include="ObservablePlay\RabbitObservable.cs" />
     <Compile Include="ObservablePlay\RxProducerConsumer.cs" />
-    <Compile Include="ProducerConsumer\ProducerConsumerSpike.cs" />
+    <Compile Include="ProducerConsumer\AsyncUrlGetter.cs" />
+    <Compile Include="ProducerConsumer\ProducerConsumerUrlGetter.cs" />
+    <Compile Include="ProducerConsumer\UrlList.cs" />
     <Compile Include="Puzzlers\FizzBuzz.cs" />
     <Compile Include="Puzzlers\PalindromeQuestion.cs" />
     <Compile Include="Person.cs" />
@@ -124,6 +129,8 @@
     <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
     <Compile Include="SerialPorts\SerialPortsSpike.cs" />
     <Compile Include="SpracheSpikes\SpracheParserWithCustomFields.cs" />
+    <Compile Include="Threading\ExceptionHandlingInThreads.cs" />
+    <Compile Include="Threading\ManyWaysToStartAThread.cs" />
     <Compile Include="UnixTime\UnixTimeSpike.cs" />
     <Compile Include="UsefulFunctions.cs" />
     <Compile Include="Visitor\VisitorSpike.cs" />

@@ -1,0 +1,65 @@
+﻿using System.Collections.Generic;
+
+namespace Mike.Spikes.ProducerConsumer
+{
+    public static class UrlList
+    {
+        public static readonly List<string> Urls = new List<string>
+            {
+                "http://www.bbc.co.uk",
+                "http://www.google.co.uk",
+                "http://en.wikipedia.org/wiki/Main_Page",
+                "https://github.com/",
+                "http://brightonalt.net/",
+                "http://tardisbank.com/",
+                "http://easynetq.com/",
+                "http://www.theguardian.com/uk",
+                "http://www.theverge.com/",
+                "http://www.engadget.com/",
+                "http://www.wired.co.uk/",
+                "http://www.huffingtonpost.co.uk/",
+                "http://www.tesco.com/",
+                "http://www.asda.com/",
+                "http://www.sainsburys.co.uk/sol/index.jsp",
+                "http://www.marksandspencer.com/",
+                "http://www.apple.com/uk/",
+                "http://www.microsoft.com/en-gb/default.aspx",
+                "http://www.bing.com/",
+                "http://www.ibm.com/uk/en/",
+                "http://www.oracle.com/uk/index.html",
+                "https://www.facebook.com/",
+                "http://www.amazon.co.uk/",
+                "http://www.youtube.com/",
+                "https://vimeo.com/",
+                "http://mikehadlow.com/",
+                "http://uk.yahoo.com/",
+                "https://twitter.com/",
+                "http://www.ebay.co.uk/",
+                "https://www.pinterest.com/",
+                "https://www.tumblr.com/",
+                "http://instagram.com/",
+                "https://www.paypal.com/uk/webapps/mpp/home",
+                "http://www.imdb.com/",
+                "http://stackoverflow.com/",
+                "http://wordpress.com/",
+                "http://www.flickr.com/",
+                "http://www.reddit.com/",
+                "https://soundcloud.com/",
+                "http://mailchimp.com/",
+                "http://mashable.com/",
+                "http://www.skype.com/en/",
+                "http://ask.fm/",
+                "http://www.ikea.com/gb/en/",
+                "http://www.samsung.com/uk/",
+                "http://www.honda.co.uk/",
+                "http://www.bmw.co.uk/en/index.html",
+                "http://www.volkswagen.co.uk/",
+                "http://www.ferrari.com/English/Pages/home.aspx",
+                "http://www.mclaren.com/",
+                "http://www.teslamotors.com/en_GB/",
+                "http://www.rabbitmq.com/",
+                "http://nodejs.org/",
+                "http://wiki.nginx.org/Main"
+            };
+    }
+}
