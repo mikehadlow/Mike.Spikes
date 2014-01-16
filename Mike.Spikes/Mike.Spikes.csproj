@@ -40,9 +40,9 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="EasyNetQ, Version=0.9.2.75, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="EasyNetQ, Version=0.25.0.171, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EasyNetQ.0.9.2.75\lib\net40\EasyNetQ.dll</HintPath>
+      <HintPath>..\packages\EasyNetQ.0.25.0.171\lib\net40\EasyNetQ.dll</HintPath>
     </Reference>
     <Reference Include="EasyNetQ.Management.Client">
       <HintPath>..\packages\EasyNetQ.Management.Client.0.12.3.117\lib\net40\EasyNetQ.Management.Client.dll</HintPath>
@@ -56,9 +56,9 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="RabbitMQ.Client, Version=3.0.2.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+    <Reference Include="RabbitMQ.Client, Version=3.1.5.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\RabbitMQ.Client.3.0.2\lib\net30\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\packages\RabbitMQ.Client.3.1.5\lib\net30\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
@@ -84,9 +84,14 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Rx-PlatformServices.2.1.30214.0\lib\Net40\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.11\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncMessaging\HowToBlockUntilAMessageArrives.cs" />
@@ -95,10 +100,15 @@
     <Compile Include="CurryContainer\RegistrationExtensions.cs" />
     <Compile Include="CurryContainer\Spike.cs" />
     <Compile Include="DangersOfThreading\Deadlock.cs" />
+    <Compile Include="DataStructures\Examples.cs" />
+    <Compile Include="DataStructures\Tree.cs" />
+    <Compile Include="DelegateExceptions\DelegateExceptionsExperiment.cs" />
     <Compile Include="Dynamic\ExpandoObjectSpike.cs" />
     <Compile Include="EasyNetQ\ErrorQueueMessageAnalysis.cs" />
-    <Compile Include="EasyNetQ\IoCMessageDispatcherSpike.cs" />
-    <Compile Include="EasyNetQ\ModelShutdownBug.cs" />
+    <Compile Include="EasyNetQ\ReplaceContainerSpike.cs" />
+    <Compile Include="ExceptionHandling\ExceptionHandlingDemoException.cs" />
+    <Compile Include="ExceptionHandling\HowItUsedToBe.cs" />
+    <Compile Include="ExceptionHandling\StructuredExceptionHandling.cs" />
     <Compile Include="FluentApi\FluentApiSpike.cs" />
     <Compile Include="HttpClientPlay\HttpClientSpike.cs" />
     <Compile Include="HttpHandler\MyHttpHandler.cs" />
@@ -107,10 +117,12 @@
     <Compile Include="Monad\IdentityMonad.cs" />
     <Compile Include="Monad\ParserMonad.cs" />
     <Compile Include="Monad\StateMonad.cs" />
+    <Compile Include="NuGetDependencyMap\DependencyMapper.cs" />
     <Compile Include="ObservablePlay\ObservableSpike.cs" />
     <Compile Include="ObservablePlay\RabbitObservable.cs" />
     <Compile Include="ObservablePlay\RxProducerConsumer.cs" />
     <Compile Include="ProducerConsumer\AsyncUrlGetter.cs" />
+    <Compile Include="ProducerConsumer\DataflowUrlGetter.cs" />
     <Compile Include="ProducerConsumer\ProducerConsumerUrlGetter.cs" />
     <Compile Include="ProducerConsumer\UrlList.cs" />
     <Compile Include="Puzzlers\FizzBuzz.cs" />
@@ -129,8 +141,12 @@
     <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
     <Compile Include="SerialPorts\SerialPortsSpike.cs" />
     <Compile Include="SpracheSpikes\SpracheParserWithCustomFields.cs" />
+    <Compile Include="SvgGenerator\FirstSvgExperiment.cs" />
+    <Compile Include="TaskCancellation\TaskCancellationExtensions.cs" />
+    <Compile Include="TaskCancellation\TaskCancellationSpike.cs" />
     <Compile Include="Threading\ExceptionHandlingInThreads.cs" />
     <Compile Include="Threading\ManyWaysToStartAThread.cs" />
+    <Compile Include="TimerSpike\TimerCollectionExperiment.cs" />
     <Compile Include="UnixTime\UnixTimeSpike.cs" />
     <Compile Include="UsefulFunctions.cs" />
     <Compile Include="Visitor\VisitorSpike.cs" />

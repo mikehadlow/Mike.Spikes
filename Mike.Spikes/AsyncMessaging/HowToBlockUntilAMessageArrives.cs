@@ -14,10 +14,7 @@ namespace Mike.Spikes
             // publishes some data
             bus.Subscribe<RequestDataMessage>("data_service", _ =>
             {
-                using(var channel = bus.OpenPublishChannel())
-                {
-                    channel.Publish(new DataMessage{ Text = "The message full of data" });
-                }
+                bus.Publish(new DataMessage{ Text = "The message full of data" });
             });
 
             var myService = new MyService(bus);
@@ -74,10 +71,7 @@ namespace Mike.Spikes
         /// </summary>
         public void Start()
         {
-            using (var channel = bus.OpenPublishChannel())
-            {
-                channel.Publish(new RequestDataMessage());
-            }
+            bus.Publish(new RequestDataMessage());
 
             bus.Subscribe<DataMessage>("mike_spike_data_processor", OnDataAvailable);
         }
