@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Reactive.Subjects;
+﻿using System.Reactive.Subjects;
 using System.Reactive.Concurrency;
-using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using System.Reactive.Subjects;
 using System;
 
 namespace Mike.Spikes.ObservablePlay

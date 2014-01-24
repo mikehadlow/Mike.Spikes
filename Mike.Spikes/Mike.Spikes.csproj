@@ -101,6 +101,8 @@
     <Compile Include="CurryContainer\Spike.cs" />
     <Compile Include="DangersOfThreading\Deadlock.cs" />
     <Compile Include="DataStructures\Examples.cs" />
+    <Compile Include="DataStructures\RingBuffer.cs" />
+    <Compile Include="DataStructures\StackAndQueue.cs" />
     <Compile Include="DataStructures\Tree.cs" />
     <Compile Include="DelegateExceptions\DelegateExceptionsExperiment.cs" />
     <Compile Include="Dynamic\ExpandoObjectSpike.cs" />
