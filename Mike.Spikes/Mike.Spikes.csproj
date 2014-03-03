@@ -115,6 +115,13 @@
     <Compile Include="HttpClientPlay\HttpClientSpike.cs" />
     <Compile Include="HttpHandler\MyHttpHandler.cs" />
     <Compile Include="JansQuestions\Questionare.cs" />
+    <Compile Include="Linq\Customer.cs" />
+    <Compile Include="Linq\ExpressionTrees.cs" />
+    <Compile Include="Linq\LinqPrerequisites.cs" />
+    <Compile Include="Linq\LinqToSql.cs" />
+    <Compile Include="Linq\Palindrome.cs" />
+    <Compile Include="Linq\Queryable.cs" />
+    <Compile Include="Linq\TypeSystem.cs" />
     <Compile Include="MessageHandler\Spike.cs" />
     <Compile Include="Monad\IdentityMonad.cs" />
     <Compile Include="Monad\ParserMonad.cs" />
@@ -139,6 +146,7 @@
     <Compile Include="RefactoringExample\BadCodeCopy.cs" />
     <Compile Include="RefactoringExample\DataAccess.cs" />
     <Compile Include="RefactoringExample\WidgetColor.cs" />
+    <Compile Include="Rhino\ExtentionMethods.cs" />
     <Compile Include="SerializationDemo\ShowJsonSerialization.cs" />
     <Compile Include="SerializationDemo\ShowXmlSerialization.cs" />
     <Compile Include="SerialPorts\SerialPortsSpike.cs" />
@@ -152,6 +160,7 @@
     <Compile Include="UnixTime\UnixTimeSpike.cs" />
     <Compile Include="UsefulFunctions.cs" />
     <Compile Include="Visitor\VisitorSpike.cs" />
+    <Compile Include="WholeCaboodleHelpers\ConflictFixing.cs" />
     <Compile Include="Windsor101\Account.cs" />
     <Compile Include="Windsor101\AccountRepository.cs" />
     <Compile Include="Windsor101\CollectionDemo.cs" />

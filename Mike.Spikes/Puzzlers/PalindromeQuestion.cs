@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
+/*
+ * What is the maximum palindromic product of two two digit numbers?
+ * 
+ * 
+ */
+
 namespace Mike.Spikes.Puzzlers
 {
     public class PalindromeQuestion
