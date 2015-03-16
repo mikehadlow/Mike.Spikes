@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.Spikes", "Mike.Spikes\Mike.Spikes.csproj", "{8019F8A9-08CB-4387-9289-44F8AEF5E625}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mike.Spikes.ConsoleShutdown", "Mike.Spikes.ConsoleShutdown\Mike.Spikes.ConsoleShutdown.csproj", "{CE34079B-2463-4BFC-8F6C-C65D03144BC6}"
-EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mike.Spikes.Fs", "Mike.Spikes.Fs\Mike.Spikes.Fs.fsproj", "{58427BCA-F203-489D-8F60-D45355B6423A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{CE34079B-2463-4BFC-8F6C-C65D03144BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE34079B-2463-4BFC-8F6C-C65D03144BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE34079B-2463-4BFC-8F6C-C65D03144BC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{58427BCA-F203-489D-8F60-D45355B6423A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58427BCA-F203-489D-8F60-D45355B6423A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58427BCA-F203-489D-8F60-D45355B6423A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58427BCA-F203-489D-8F60-D45355B6423A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
